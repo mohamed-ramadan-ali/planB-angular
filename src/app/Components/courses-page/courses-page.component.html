@@ -1,0 +1,85 @@
+<div class=" bg-nav">
+    <div class="container">
+
+    
+    <div class="row justify-content-between">
+        <div class="col-lg-5 my-3 ml-3">
+            <div class="courses-text">
+                <h1> <strong>Our Courses</strong> </h1>
+                <h2>We provide courses in all fields of marketing, leadership and social. </h2>
+             
+            </div>
+        </div>
+<div class="col-lg-3 text-right ">
+<img  class="img-fluid"   src="../../../assets/imgs/charcter.png" alt="">
+</div>
+  
+
+    </div>
+</div>
+</div>
+
+
+
+<!--------------------------------------- [ Courses header End ]----------------------->
+
+
+
+
+<mat-tab-group class="container-fluid" (selectedTabChange)="getCategoryCourse($event)">
+    <mat-tab class="text-danger " *ngFor="let category of categories" label={{category.name}}>
+        <div class="container">
+            <div class="row" *ngIf="courses.length >0">
+
+
+
+
+            </div>
+            <div class="main " *ngIf="courses.length == 0"
+                style="font-size: x-large; color: crimson; padding: 20px 0px;">There is no Courses in
+                this Category </div>
+        </div>
+
+
+
+        <div class='w-80 row pt-2 pb-5'>
+
+
+            <div class="item col-md-3" *ngFor="let course of courses">
+                <div style="align-content: center">
+                    <div class="container">
+                        <div class="row" *ngIf="courses.length >0">
+
+
+                            <div class="main mx-1 ">
+                                <img class="img-fluid " [src]="course.photo" alt="">
+
+                                <div class="layer" (click)="redirectToCourseDetails(course.id)">
+
+                                    <h4 class=" bg-nav  "> <strong>{{course.name}}</strong> </h4>
+
+                                    <h5 *ngFor="let instructorName of course.instractorName">
+                                        Instractore : {{instructorName}}
+                                    </h5>
+
+                                    <h5> Price : {{course.price}} EGP </h5>
+                                    <button class="btn" *ngIf="! course.isEnroll"
+                                        (click)="redirectToCourseDetails(course.id)"> Join Now
+                                    </button>
+                                </div>
+
+                            </div>
+
+    <h2 class="crs-name1  text-center "> {{course.name}} </h2>
+
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </mat-tab>
+</mat-tab-group>

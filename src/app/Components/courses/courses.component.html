@@ -1,0 +1,68 @@
+
+
+<!--------------------------------------- [ profile trainers Start ]----------------------->
+
+  <!--------------------------------------- [  info  Start ]----------------------->
+  <div class=" bg-nav">
+
+
+    <div class="container  py-3">
+      <div class="row">
+        <div class="col-lg d-flex">
+          <!-- <img class="img-fluid" src="../../../assets/imgs/amr.png"alt=""> -->
+          <img class="img-fluid" [src]="user.photo"alt="">
+
+          <div class="m-2 text-center "  >
+            <H4 class=""><Strong> {{user.name}}</Strong></H4>
+            <h5>{{user.email}}</h5>
+            <H4 class="text-danger">{{user.noOfCourssesEnrol}}</H4>
+            <h5>Accomplished Courses</h5>
+          </div>
+        </div>
+
+
+
+
+    
+
+
+       
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!--------------------------------------- [ trainer info  End ]----------------------->
+
+ 
+
+
+
+
+
+
+<div class="main" *ngIf="userCourses !== null">
+<div class=" col-lg-4  "  *ngFor="let course of userCourses">
+    <div class="main ">
+    <img class="img-fluid " src="../../../../assets/imgs/course 8.jpg" alt="">
+    <h4 class="crs-name1 bg-danger px-2">{{course.name}} </h4>
+    <div class="layer" (click)="redirectToCoursePlayList(course.id)">
+      <!-- <h3>محتويات الكورس</h3>
+      <h5>بناء علامات تجارية قوية -</h5>
+      <h5>صياغة عروض السوق -</h5> -->
+      <h1></h1>
+      <h5> : المدرب
+        <h5 *ngFor="let instructorName of course.instractorName">
+          {{instructorName}}
+        </h5>
+      </h5>
+      <h5> {{course.price}} EGP </h5>
+    </div>
+  </div>
+  </div>
+</div>
+  <div  class="main "  *ngIf="userCourses.length == 0" style="font-size: x-large; color: crimson;" >ليس لديك كورسات  </div>
+

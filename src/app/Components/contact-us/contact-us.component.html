@@ -1,0 +1,122 @@
+<div class=" contact-us">
+
+    <div class="login-form container    d-block">
+        <h2 class="pt-2">Contact Us</h2>
+       
+        <form [formGroup]='contactForm' (ngSubmit)='getFormData(contactForm)'>
+
+            <div class="form-group">
+                <label  for="">Full Name</label>
+                <input
+                    [class.is-valid]='contactForm.get("fullName").invalid ==false && contactForm.get("fullName").touched ==true'
+                    [class.is-invalid]='contactForm.get("fullName").invalid ==true && contactForm.get("fullName").touched ==true'
+                    formControlName='fullName' class=" form-control   w-50 py-2   brdr-raduise" type="text" name=""
+                    id="">
+                <span *ngIf='contactForm.get("fullName").invalid ==true && contactForm.get("fullName").touched ==true'
+                    class="text-danger d-block p-2 ">Full Name Not Valid (*Required) & "not allow special
+                    characters"</span>
+            </div>
+
+            <div class="form-group">
+                <label class="mt-3" for="">Phone Number</label>
+                <input
+                    [class.is-valid]='contactForm.get("phone").invalid ==false && contactForm.get("phone").touched ==true'
+                    [class.is-invalid]='contactForm.get("phone").invalid ==true && contactForm.get("phone").touched ==true'
+                    formControlName='phone' class="  form-control  w-50 py-2   brdr-raduise" type="text" name="" id="">
+                <span *ngIf='contactForm.get("phone").invalid ==true && contactForm.get("phone").touched ==true'
+                    class="text-danger d-block p-2 ">Phone Number Not Valid</span>
+            </div>
+
+            <div class="form-group">
+                <label class="mt-3" for="">Email</label>
+                <input formControlName='email'
+                    [class.is-valid]='contactForm.get("email").invalid ==false && contactForm.get("email").touched ==true'
+                    [class.is-invalid]='contactForm.get("email").invalid ==true && contactForm.get("email").touched ==true'
+                    class="form-control  w-50 brdr-raduise py-2" type="email" name="" id="">
+                <span *ngIf='contactForm.get("email").invalid ==true && contactForm.get("email").touched ==true'
+                    class="text-danger d-block p-2 ">Email Not Valid</span>
+            </div>
+
+            <div class="form-group">
+                <label class="mt-3" for="">Your Message</label>
+                <textarea formControlName='message'
+                    [class.is-valid]='contactForm.get("message").invalid ==false && contactForm.get("message").touched ==true'
+                    [class.is-invalid]='contactForm.get("message").invalid ==true && contactForm.get("message").touched ==true'
+                    class="form-control  w-50 brdr-raduise py-2" name="" id="" cols="20" rows="5"></textarea>
+                <span *ngIf='contactForm.get("message").invalid ==true && contactForm.get("message").touched ==true'
+                    class="text-danger d-block p-2 ">Message Not Valid (*Required) & "not allow special
+                    characters"</span>
+            </div>
+
+
+
+            <button [disabled]="contactForm.invalid == true" type="submit"
+                class=" btn px-5 btn-danger    my-2 brdr-raduise ">Send</button>
+
+        </form>
+
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+<!--------------------------------------- [ contactus End ]----------------------->
+
+<!-- Modal HTML -->
+<div id="succsesSend" class="sendDone d-none">
+
+
+    <div id="myModal">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>
+                    <h4 class="modal-title w-100">Awesome!</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Your message has been sent successfully.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-block" (click)=" hideSuccsesAlirte()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div id="failedSend" class="sendFailed d-none">
+
+
+    <div id="myModal">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box bg-danger">
+                        <i class="material-icons bg-danger">&#xE5CD;</i>
+                    </div>
+                    <h4 class="modal-title w-100">Sorry! </h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Failed to send your message. <br>  Please go back and try again. </p>
+                </div>
+                <div >
+                    <button class="btn btn-danger bg-danger btn-block" (click)='hideFailedAlirte()' >OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

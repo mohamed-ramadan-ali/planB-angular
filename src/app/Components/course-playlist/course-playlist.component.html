@@ -1,0 +1,175 @@
+
+<!--------------------------------------- [ Nav Start ]----------------------->
+<div class="plan_nav">
+    <div class="container ">
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand" href="../index.html"><img src="../imgs/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse  navbar-collapse" id="navbarSupportedContent">
+
+
+
+          <!-- <a class="ml-auto" href="../profile/profile.html">
+            <div class="icon-redus mx-3 "> <i class="fas fa-user"></i></div>
+          </a> -->
+
+        </div>
+
+      </nav>
+
+
+
+
+
+    </div>
+
+
+  </div>
+  <!--------------------------------------- [ Nav End ]----------------------->
+
+
+  <!--------------------------------------- [ play list start ]----------------------->
+  <div class="Course-Title bg-nav mb-5">
+    <div class="container video-text d-flex ">
+      <i class="fas fa-play-circle pt-4  mr-2 play-icon "></i>
+      <h3 class="Video-Title pt-4"> Video {{videoindex}} : {{videoName}} </h3>
+
+      <h4 class="ml-auto  pt-4 mr-5"> <strong>Course content</strong>
+      </h4>
+    </div>
+
+
+
+    <div class="container-fluid">
+      <div class="row">
+
+
+        <div class="col-lg-8 course-video ">
+          <div>
+            <div *ngIf="download" class="ml-auto"   style="height: 460px;width:80%;max-width:100%;" >
+              <!-- <iframe  [src]="VedoSrc " style="border:0;height:460px;width:740px;max-width:100%" allowFullScreen="true" allow="encrypted-media"></iframe>    -->
+              <div id="embedBox" style="width:1280px;max-width:100%;height:auto;">hhhhhhh</div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 course-list  ">
+
+
+
+          <div class="video-2 w-100   pt-1 mb-3 shadow "  *ngFor="let video of courseDetails.videos;  let i = index">
+            <div class="d-flex episode-name" (click)="nextVideo(video,i)">
+              <i class="fas fa-caret-right m-1   "></i>
+              <h5> Video {{i+1}} : {{video.name}}</h5>
+            </div>
+
+            <div class="d-flex episode-info">
+              <i class="far fa-file-video m-1"></i>
+              <span>{{video.totalTimeBySec/60 | number : '1.2-2' }} Min</span>
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <!--------------------------------------- [ play list End ]----------------------->
+
+
+
+
+  <!--------------------------------------- [ about-Course start ]----------------------->
+
+  <div class="about-course container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h5> <strong>About The Course</strong> </h5>
+          <p>
+            {{courseDetails.fullDesc}}
+          </p>
+
+      </div>
+
+
+
+
+
+      <div class="col-lg-6 ">
+       
+        <div class="progress " style="height: 20px;">
+          <div class="progress-bar  " role="progressbar" [ngStyle]="{width: courseDetails.watchPercentage + '%'}" aria-valuenow="50" aria-valuemin="0"
+            aria-valuemax="100">{{courseDetails.watchPercentage}}% Complete</div>
+        </div>
+
+        <div class="course-info bg-nav mt-3 p-5 ">
+          <div class="row">
+            <div class="col-lg-4 ">
+              <H5>{{courseDetails.totalHouers}} Hrs</H5>
+              <h6>Duration</h6>
+            </div>
+
+            <div class="col-lg-4 ">
+              <H5>{{courseDetails.videos.length}}</H5>
+              <h6>Videos</h6>
+            </div>
+
+            <div class="col-lg-4">
+              <H5>Arabic</H5>
+              <h6>Language</h6>
+            </div>
+          </div>
+
+        </div>
+        <div class="text-center my-2">
+<button  class="btn btn-success ">Download certificate <i class="fas fa-award award-icon"></i></button>
+</div>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+  </div>
+
+  <!-- <div class="container">
+  <div id="embedBox" style="width:1280px;max-width:100%;height:auto;">hhhhhhh</div>
+</div> -->
+
+
+  
+
+
+  <!--------------------------------------- [ about-Course End ]----------------------->
+
+

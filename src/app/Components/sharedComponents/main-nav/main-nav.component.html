@@ -1,0 +1,99 @@
+<!-- <p>main-nav works!</p> -->
+
+<div class="container">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" routerLink="home"> <img src="../../../../assets/imgs/logo2.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse   " id="navbarSupportedContent">
+
+            <div class="search-div ">
+                <input class="form-control brdr-raduise-25" type="search" placeholder="Search" aria-label="Search">
+
+            </div>
+         
+        <div class="navitems">
+
+          <div class="iconsNav  ">
+
+            <a href=""><i class="fab fa-youtube-square"></i></a>
+            <a href=""><i class="fab fa-facebook-square"></i></a>
+            <a href=""><i class="fab fa-twitter-square"></i></a>
+            <a href=""><i class="fab fa-instagram-square"></i></a>
+  
+        </div>
+            <div class="nav-btns ">
+                <button class="  btnUser mx-1    " (click)="redirectToMycourses()"> </button>
+              
+                <button class=" btnAr mx-1 " (click)="changeLangage('ar')"> </button>
+                <button class=" btnEn mx-1 " (click)="changeLangage('en')"></button>
+              
+            </div>
+           
+            
+
+          </div>
+        </div>
+    
+    </nav>
+
+
+
+
+    
+</div>
+
+
+<div class=" bg-nav">
+<nav class="navbar navbar-expand-lg navbar-light container ">
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNav">
+      <ul class="navbar-nav ">
+        <li class="nav-item active mx-2">
+          <a class="nav-link" routerLink="home"> Home </a>
+        </li>
+
+        <li class="nav-item active mx-2">
+            <a class="nav-link" routerLink="courses"> Courses</a>
+          </li>
+
+          <li class="nav-item active mx-2">
+            <a class="nav-link" routerLink="diploma"> Diploma</a>
+          </li>
+
+          <li class="nav-item active mx-2">
+            <a class="nav-link" routerLink="books"> Books</a>
+          </li>
+
+          <li class="nav-item active mx-2">
+            <a class="nav-link" routerLink="trainers"> Our Trainers</a>
+          </li>
+
+          <li class="nav-item active mx-2">
+            <a class="nav-link" routerLink="events"> Events</a>
+          </li>
+
+          <li class="nav-item active mx-2">
+            <a class="nav-link" routerLink="about-us"> About Us</a>
+          </li>
+
+          <li class="nav-item active mx-2">
+            <a class="nav-link" routerLink="contact-us"> Contact Us</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

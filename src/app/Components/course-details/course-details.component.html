@@ -1,0 +1,205 @@
+<!-- <p>course-details works!</p> -->
+
+<div class="Course-Title bg-nav mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="courses-text">
+          <h1>{{courseDetails.name}}</h1>
+          <!-- <h1>Managment</h1> -->
+          <!-- <p>Our B.A.A.S degree accepts and builds on these unique credits,
+              combining them with course work in seven distinct concentrations
+              so you can meet your individual or career goals. The degree is
+              designed to help transfer students from community colleges and
+              technical institutions, finish their bachelor’s degree faster. </p> -->
+          <P>{{courseDetails.desc}}</P>
+
+          <div class=" d-flex share">
+            <h6> <strong>Share</strong> </h6>
+            <a class=" mx-3" href=""><i class="fab fa-facebook-square"></i></a>
+            <a class=" mx-3" href=""><i class="fab fa-linkedin"></i></a>
+            <a class=" mx-3" href=""><i class="fab fa-twitter-square"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 course-video ">
+        <!-- <div>
+          <iframe width="100%" height="300" src="https://www.youtube.com/embed/wfOp0lsCXAY" frameborder="0"
+            allowfullscreen></iframe>
+        </div> -->
+        <div class="ml-auto" id="embedBox" style="height: 300px;width:100%;max-width:100%;">
+          <iframe [src]="VedoSrc" Content="no-cache"
+          style="border:0;height:300px;width:740px;max-width:100%" allowFullScreen="true" allow="encrypted-media"></iframe>   
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!--------------------------------------- [ about-Course start ]----------------------->
+
+<div class="about-course container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h3> <strong>About The Course</strong> </h3>
+
+      <P>{{courseDetails.fullDesc}}</P>
+
+    </div>
+
+
+
+
+
+    <div class="col-lg-6 ">
+
+      <div class="take-course ml-5 d-flex">
+        <a class="mx-3"><button class=" btn px-3 btn-outline-danger  brdr-raduise " (click)="enroleInCourse(courseDetails.id)">
+            <STrong>Take Course</STrong> </button></a>
+        <div class="icon-redus mx-3 shadow"> <i class="fas fa-shopping-cart"></i></div>
+        <div class="icon-redus mx-3 shadow "> <i class="far fa-heart"></i></div>
+      </div>
+
+      <div class="course-info bg-nav mt-3 p-5 d-flex justify-content-between ">
+        
+          <div >
+            <H5>{{courseDetails.totalHouers}} Hrs</H5>
+       
+            <h6>Duration</h6>
+          </div>
+
+          <div >
+            <H5>{{courseDetails.videos?.length}}</H5>
+            <h6>Videos</h6>
+          </div>
+
+          <div >
+            <H5>{{courseDetails.language}}</H5>
+            <h6>Language</h6>
+          </div>
+        
+
+      </div>
+
+
+    </div>
+
+
+    <div class="col-lg-6 content mt-3">
+
+      <h3><strong>Content</strong> </h3>
+      <h4>Title of the section</h4>
+      <div class="video-1">
+        <h3><i class="fas fa-caret-right"></i> Video 1</h3>
+        <!-- <iframe class="ml-3" width="70%" height="200" src="https://www.youtube.com/embed/wfOp0lsCXAY" frameborder="0"
+          allowfullscreen></iframe> -->
+          <iframe [src]="VedoSrc" Content="no-cache"
+          style="border:0;height:300px;width:740px;max-width:100%" allowFullScreen="true" allow="encrypted-media"></iframe>
+
+      </div>
+
+      <div *ngFor="let video of courseDetails.videos">
+        <div class="video-2 w-100 d-flex justify-content-between align-items-center px-2  shadow ">
+          <h3 class="mt-3"><i class="fas fa-caret-right "></i> {{video.name}}</h3>
+          <i class="fas fa-lock"></i>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="col-lg-6 ">
+      <div class=" Instructor bg-nav mt-3 p-5 ">
+
+        <h3><strong>About the Instructor</strong> </h3>
+
+        <div class="instr-info d-flex align-items-center">
+
+          <img class="w-25" [src]="courseDetails.instructors[0].photo" alt="">
+          <div class="ml-2">
+            <h4><Strong> {{courseDetails.instructors[0].name}} </Strong></h4>
+            <h4><Strong>{{courseDetails.instructors[0].jobTitle}}</Strong></h4>
+          </div>
+
+        </div>
+        <!-- 
+        <p class="my-3">
+          Our B.A.A.S degree accepts and builds on these unique
+          credits, combining them with course work in seven
+          distinct concentrations so you can meet your individual
+          or career goals. The degree is designed to help transfer
+          students from community colleges and technical institutions,
+          finish their bachelor’s degree faster. Our B.A.A.S degree
+          accepts and builds on these unique credits, combining them
+          with course work in seven distinct concentrations so you can meet your
+        </p> -->
+
+        <p class="my-3">
+          {{courseDetails.instructors[0].about}}
+        </p>
+
+
+        <h3 class="mt-5"><strong>More Courses by the instructor</strong> </h3>
+
+        <div class="row ">
+
+
+          <div class="col-lg-6 my-2">
+            <a href="#">
+              <div class="post ">
+                <div class="main ">
+                  <img class="img-fluid " src="../../../assets/imgs/course 6.jpg" alt="">
+                  <h4 class="crs-name1"> ادارة الاعمال </h4>
+                  <div class="layer">
+                    <h3>محتويات الكورس</h3>
+                    <H5>بناء علامات تجارية قوية -</H5>
+                    <h5>صياغة عروض السوق -</h5>
+                    <h5> المدرب: محمد على</h5>
+                    <h5> 500 EGP </h5>
+                    <button class="btn"> اشترك الأن</button>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+
+          <div class="col-lg-6 my-2">
+            <a href="#">
+              <div class="post ">
+                <div class="main ">
+                  <img class="img-fluid " src="../../../assets/imgs/course 6.jpg" alt="">
+                  <h4 class="crs-name1"> ادارة الاعمال </h4>
+                  <div class="layer">
+                    <h3>محتويات الكورس</h3>
+                    <H5>بناء علامات تجارية قوية -</H5>
+                    <h5>صياغة عروض السوق -</h5>
+                    <h5> المدرب: محمد على</h5>
+                    <h5> 500 EGP </h5>
+                    <button class="btn"> اشترك الأن</button>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+
+
+
+          <button class=" btn px-4 btn-outline-danger m-3 brdr-raduise m-auto">Know More</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<jw-modal id="custom-modal-1">
+  <p >{{errorMess}}</p>
+  <button (click)="closeModal('custom-modal-1');">Close</button>
+</jw-modal>

@@ -1,0 +1,29 @@
+<div class="bg-grad py-2">
+
+
+<div class="container-fluid trainers-sec w-80 ">
+    <h1 class="my-3">Our Trainers</h1>
+    <owl-carousel [options]="SlideOptions" [items]="trainersArr" [carouselClasses]="['owl-theme', 'sliding']">
+
+        <div class="item  text-center" *ngFor="let trainer of trainersArr">
+
+            <div class="main mx-2 ">
+                <img class="img-fluid " [src]="trainer.photo" alt="">
+               
+              
+            </div>
+
+            <h2 class=" my-2 text-center"><Strong>{{trainer.name}}</Strong></h2>
+        </div>
+
+
+
+
+
+
+    </owl-carousel>
+
+
+</div>
+
+</div>

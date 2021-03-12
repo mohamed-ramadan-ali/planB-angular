@@ -1,0 +1,51 @@
+<div class="bg-nav">
+
+
+
+<div class="container ">
+    <H1 class="py-3"><Strong>Our trainers</Strong></H1>
+    <div class="row">
+        <div class="col-lg-3 tranier  text-center"  *ngFor="let trainer of trainersArr">
+
+            <img class="img-fluid w-75 mt-2 " [src]="trainer.photo" alt="">
+            <h3 class="my-3"><Strong>{{trainer.name}}</Strong></h3>
+            <h4>{{trainer.jobTitle}}</h4>
+            
+            <div class="text-left" [ngClass]="{'show-less': showShortDesciption}">
+               
+            <p  >{{trainer.about}}</p>
+            
+            </div>
+
+
+          
+            <button class="read-btn" type="button" (click)="alterDescriptionText()">
+                {{ showShortDesciption ? 'Read more': 'Read less' }}
+              </button>
+          
+            
+            </div>
+            
+            
+    </div>
+    <div class="w-100 text-center">
+        <ul id="pagination">
+            
+            <li><a (click)="pageNumber($event)">1</a></li>
+            <li><a (click)="pageNumber($event)">2</a></li>
+            <li><a (click)="pageNumber($event)">3</a></li>
+            <li><a (click)="pageNumber($event)">4</a></li>
+            <li><a (click)="pageNumber($event)">5</a></li>
+         
+          </ul> 
+
+
+
+
+
+  
+        
+    </div>
+    
+</div>
+</div>

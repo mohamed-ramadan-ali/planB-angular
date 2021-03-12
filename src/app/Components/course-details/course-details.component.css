@@ -1,0 +1,45 @@
+.plan_nav{
+    position: relative ;
+    
+     z-index: 999;
+     width: 100%;
+ }
+
+ .courses-text{
+    margin-top: 50px;
+    margin-left: 40px;
+ }
+
+ .icons{
+     margin-top: 50px;
+ }
+
+ .share i{
+     font-size: 25px;
+ }
+
+ .course-video {
+     position: relative;
+     bottom: -30px;
+ }
+
+ .icon-redus{
+     font-size: 25px;
+     color: #dc3545;
+     border: solid 1px #dc3545;
+     border-radius: 50%;
+     padding: 7px 7px;
+     cursor: pointer;
+    
+
+ }
+
+ .icon-redus:hover{
+    color: #ffffff;
+    background-color:#dc3545 ;
+ }
+
+ .course-info h5 {
+    color: #dc3545;
+   
+ }

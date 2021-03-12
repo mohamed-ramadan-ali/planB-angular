@@ -1,0 +1,45 @@
+<div class="bg-nav">
+
+
+<div class="container  ">
+    <H1 class="py-3"><Strong>Events</Strong></H1>
+    <div class="row">
+
+        <div class="col-lg-4" *ngFor="let event of eventsArr">
+            
+              <div class="post">
+                <div class="main">
+                  <img class="img-fluid" [src]="event.picture" alt="">
+                  <div class="bundle-name text-center "> <span> <i class="far fa-calendar-alt cale mt-1"></i> </span>
+                    <h5> {{event.eventDate}}</h5>
+                  </div>
+                  <div class="layer py-5">
+                    <h2>{{event.name}} </h2>
+                    <h3>{{event.description}}</h3>
+                    <H5>Date: {{event.eventDate}}</H5>
+                    <h5> Price: {{event.price}} EGP</h5>
+                    <button class="btn"> Join Us</button>
+                  </div>
+                </div>
+              </div>
+              <h2 (click)="redirectToEventDetails(event.id)">{{event.name}} </h2>
+          </div>
+
+            
+            
+    </div>
+    <div class="w-100 text-center">
+      <ul id="pagination">
+            
+        <li><a (click)="pageNumber($event)">1</a></li>
+        <li><a (click)="pageNumber($event)">2</a></li>
+        <li><a (click)="pageNumber($event)">3</a></li>
+        <li><a (click)="pageNumber($event)">4</a></li>
+        <li><a (click)="pageNumber($event)">5</a></li>
+     
+      </ul> 
+    </div>
+    
+</div>
+
+</div>

@@ -1,0 +1,18 @@
+<div class="container content my-2">
+        <div class="">
+
+
+
+
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+                        (init)="slickInit($event)"  >
+                        
+
+
+                                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                                        <img class=" slider-img w-80 " src="{{ slide.img }}" alt="" width="100%">
+                                </div>
+                        
+                </ngx-slick-carousel>
+        </div>
+</div>
